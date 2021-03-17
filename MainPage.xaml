@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="laba1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:laba1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#FF323232" Height="Auto" Width="Auto">
+
+    <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid Padding="40" Background="DimGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="InputText" Grid.Row="0" Margin="0,5,0,5"  FontSize="32pt" PlaceholderText="Текст" Background="#FFE8E8E8" Foreground="#FF1F1F1F" PlaceholderForeground="Gray"/>
+        <TextBox x:Name="Key" Grid.Row="1"  Margin="0,5,0,5" FontSize="32pt" PlaceholderText="Высота" Background="#FFE8E8E8" Foreground="#FF1F1F1F" PlaceholderForeground="Gray"/>
+        <TextBox x:Name="ResultText" Grid.Row="2"  Margin="0,5,0,5" FontSize="32pt" PlaceholderText="Результат" Background="#FFE8E8E8" Foreground="#FF1F1F1F" PlaceholderForeground="Gray" IsReadOnly="True"/>
+        <Grid x:Name="CipherMethods" Grid.Row="3"  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="0,40" Padding="0,0,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <RadioButton Grid.Row="0" x:Name="RailFenceCipher" GroupName="Cipher" Checked="CipherMethod_Checked" IsChecked="True" Margin="10" Content="Шифр методом железнодорожной изгороди" FontSize="32pt" Padding="10,0,0,0" Foreground="#FFEEEEEE"/>
+                <RadioButton Grid.Row="1" x:Name="ColumnarCipher" GroupName="Cipher" Checked="CipherMethod_Checked" Margin="10" Content="Шифр столбцовым методом" FontSize="32pt" Padding="10,0,0,0" Foreground="#FFEEEEEE"/>
+                <RadioButton Grid.Row="2" x:Name="GrilleCipher" GroupName="Cipher" Checked="CipherMethod_Checked" Margin="10" Content="Шифр методом поворачивающейся решётки" FontSize="32pt" Padding="10,0,0,0" Foreground="#FFEEEEEE"/>
+                <RadioButton Grid.Row="3" x:Name="PlayfairCipher" GroupName="Cipher" Checked="CipherMethod_Checked" Margin="10" Content="Шифр Плейфера" FontSize="32pt" Padding="10,0,0,0" Foreground="#FFEEEEEE"/>
+            </Grid>
+        <Grid Grid.Row="4" HorizontalAlignment="Stretch" Margin="0,40">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+                <Button x:Name="DecryptButton" Grid.Column="0" Content="Расшифровать" FontSize="45pt" HorizontalAlignment="Center" Click="DecryptButton_Click"/>
+                <Button x:Name="EncryptButton" Grid.Column="1" Content="Зашифровать" FontSize="45pt" HorizontalAlignment="Center" Click="EncryptButton_Click"/>
+        </Grid>
+    </Grid>
+    </Viewbox>
+</Page>
